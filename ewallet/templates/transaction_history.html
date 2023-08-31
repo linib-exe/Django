@@ -1,0 +1,5 @@
+{% for transaction in transactions %}
+    <p>{{ transaction.sender }} sent {{ transaction.amount }} to {{ transaction.receiver }} at {{ transaction.timestamp }}</p>
+{% empty %}
+    <p>No transactions found.</p>
+{% endfor %}
