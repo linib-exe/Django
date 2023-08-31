@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import StudentRegistrationForm
 
@@ -11,7 +11,7 @@ def register_student(request):
         form = StudentRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'register.html',{'form': form})
+            return redirect('/home/')
     else:
         form = StudentRegistrationForm()
 
