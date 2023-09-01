@@ -78,3 +78,7 @@ def register_view(request):
 def logout_view(request):
     logout(request)
     return redirect('todo_list')
+
+def index_view(request):
+    
+    return render(request,'index.html')
